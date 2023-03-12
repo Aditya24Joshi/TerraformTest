@@ -1,10 +1,5 @@
 pipeline {
     agent any
-
-environment{
-path= "tmp0oebd5x0.pem"
-}
-
     stages {
         stage('Login to Azure') {
 		steps{ withCredentials([azureServicePrincipal(credentialsId: 'AzureServicePrincipal',
