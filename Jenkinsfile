@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello World!!!!!'
                 echo 'heelooupdate!'
-                sh 'git --version'
+                sh 'Terraform -version'
             }
         }
     }
