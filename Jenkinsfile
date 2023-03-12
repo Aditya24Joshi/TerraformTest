@@ -7,10 +7,14 @@ path= "tmp0oebd5x0.pem"
 
     stages {
         stage('Login to Azure') {
-            steps {
-                
-		  sh 'az login --service-principal --username f6e29b7a-369d-4a6f-ace0-6ca52c4e7f47 --tenant 724c6201-042e-4a56-852e-636887bad72f --password $path'
-            }
-        }
+		steps{ withCredentials([azureServicePrincipal(credentialsId: 'AzureServicePrincipal',
+                                    subscriptionIdVariable: 'SUBS_ID',
+                                    clientIdVariable: 'CLIENT_ID',
+                                    clientSecretVariable: 'CLIENT_SECRET',
+                                    tenantIdVariable: 'TENANT_ID')]) {
+        sh 'az login --service-principal -u $CLIENT_ID -p $CLIENT_SECRET -t $TENANT_ID'
     }
+        
+    }
+  }
 }
