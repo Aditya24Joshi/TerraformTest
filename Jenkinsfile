@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Login to Azure') {
+        /*stage('Login to Azure') {
 		steps{ withCredentials([azureServicePrincipal(credentialsId: 'AzureServicePrincipal',
                                     subscriptionIdVariable: 'SUBS_ID',
                                     clientIdVariable: 'CLIENT_ID',
@@ -10,7 +10,7 @@ pipeline {
         sh 'az login --service-principal -u $CLIENT_ID -p $CLIENT_SECRET -t $TENANT_ID'
           }
    }	      
-}		      
+}*/		      
 		      stage('Checkout') {
             steps {
             checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Aditya24Joshi/TerraformTest.git']]])            
