@@ -20,6 +20,10 @@ pipeline {
         
         stage ("terraform init") {
             steps {
+		  sh 'export ARM_CLIENT_ID="CLIENT_ID"'
+		  sh 'export ARM_CLIENT_SECRET="CLIENT_SECRET"'
+		  sh 'export ARM_TENANT_ID="TENANT_ID"'
+		  sh 'export ARM_SUBSCRIPTION_ID="SUBS_ID"'
                 sh ('terraform init') 
             }
         }
