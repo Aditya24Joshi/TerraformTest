@@ -20,6 +20,7 @@ pipeline {
 				    sh 'set ARM_CLIENT_SECRET="CLIENT_SECRET"'
 		                    sh 'set ARM_SUBSCRIPTION_ID="SUBS_ID"'
 		                    sh 'set ARM_TENANT_ID="TENANT_ID"'
+				    echo %"TENANT_ID"%
 				    sh ('terraform init') 
           }
    }	      
