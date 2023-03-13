@@ -16,10 +16,10 @@ pipeline {
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')]) {
         			    sh 'az login --service-principal -u $CLIENT_ID -p $CLIENT_SECRET -t $TENANT_ID'
-				    sh 'set ARM_CLIENT_ID=4c7445ec-7cb0-4ada-a372-b67de96b398d'
-				    sh 'set ARM_CLIENT_SECRET=P3_8Q~oP3sgCHw2HSVn-f87z5zzxrmfgG4Fhfbhp'
-		                    sh 'set ARM_SUBSCRIPTION_ID=3c891e52-07ee-4dac-b159-2e9e107ae8b0'
-		                    sh 'set ARM_TENANT_ID=724c6201-042e-4a56-852e-636887bad72f'
+				    bat 'set ARM_CLIENT_ID=4c7445ec-7cb0-4ada-a372-b67de96b398d'
+				    bat 'set ARM_CLIENT_SECRET=P3_8Q~oP3sgCHw2HSVn-f87z5zzxrmfgG4Fhfbhp'
+		                    bat 'set ARM_SUBSCRIPTION_ID=3c891e52-07ee-4dac-b159-2e9e107ae8b0'
+		                    bat 'set ARM_TENANT_ID=724c6201-042e-4a56-852e-636887bad72f'
 				    sh 'echo %"TENANT_ID"%'
 				    sh ('terraform init') 
           }
