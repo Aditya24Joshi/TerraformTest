@@ -16,10 +16,10 @@ pipeline {
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')]) {
         			    sh 'az login --service-principal -u $CLIENT_ID -p $CLIENT_SECRET -t $TENANT_ID'
-				    sh 'export ARM_CLIENT_ID="CLIENT_ID"'
-				    sh 'export ARM_CLIENT_SECRET="CLIENT_SECRET"'
-		                    sh 'export ARM_SUBSCRIPTION_ID="SUBS_ID"'
-		                    sh 'export ARM_TENANT_ID="TENANT_ID"'
+				    sh 'set ARM_CLIENT_ID="CLIENT_ID"'
+				    sh 'set ARM_CLIENT_SECRET="CLIENT_SECRET"'
+		                    sh 'set ARM_SUBSCRIPTION_ID="SUBS_ID"'
+		                    sh 'set ARM_TENANT_ID="TENANT_ID"'
 				    sh ('terraform init') 
           }
    }	      
