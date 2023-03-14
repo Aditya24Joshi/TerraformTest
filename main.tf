@@ -1,22 +1,15 @@
 terraform {
-  required_version = ">=0.12"
-
   required_providers {
     azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~>2.0"
-    }
-    random = {
-      source  = "hashicorp/random"
-      version = "~>3.0"
+      source = "hashicorp/azurerm"
+      version = "3.47.0"
     }
   }
 }
 
-provider   "azurerm"   { 
-   version   =   "= 1.4.0" 
-   features   {} 
- }
+provider "azurerm" {
+  # Configuration options
+}
 
 #Create Resource Group
 resource "azurerm_resource_group" "tamops" {
