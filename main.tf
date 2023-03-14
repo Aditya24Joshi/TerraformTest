@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "azurerm" {
-  subscription_id = ${{ env.SUB }}
+  subscription_id = "3c891e52-07ee-4dac-b159-2e9e107ae8b0"
 }
 
 #Create Resource Group
