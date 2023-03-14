@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "azurerm" {
-  subscription_id = “SUBID”
+  subscription_id = SUBID
 }
 
 #Create Resource Group
