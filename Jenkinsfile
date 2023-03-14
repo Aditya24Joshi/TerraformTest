@@ -15,7 +15,6 @@ pipeline {
 				    bat 'setx ARM_CLIENT_SECRET "P3_8Q~oP3sgCHw2HSVn-f87z5zzxrmfgG4Fhfbhp" /M'
 		                    bat 'setx ARM_SUBSCRIPTION_ID "3c891e52-07ee-4dac-b159-2e9e107ae8b0" /M'
 		                    bat 'setx ARM_TENANT_ID "724c6201-042e-4a56-852e-636887bad72f" /M'
-				    bat 'echo %ARM_TENANT_ID%'
 				    bat 'terraform init'
   }   	      
 }		      
