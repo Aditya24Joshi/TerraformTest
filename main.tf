@@ -29,13 +29,12 @@ resource "azurerm_virtual_network" "storagevnet" {
 }
 
 
+
 resource "azurerm_storage_account" "samplestorageacc" {
   name                = "samplestorageacc"
   resource_group_name = "tamops"
-
-  location                 = "eastus2"
-  account_tier             = "Standard"
+  location = "eastus2"
+  account_tier = "Standard"
   account_replication_type = "LRS"
-
 
 }
