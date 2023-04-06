@@ -28,26 +28,13 @@ resource "azurerm_virtual_network" "storagevnet" {
   resource_group_name = "tamops"
 }
 
-resource "azurerm_subnet" "storagesubnet" {
-  name                 = "storagesubnet"
-  resource_group_name  = "tamops"
-  virtual_network_name = "storagevnet"
-  address_prefixes     = ["10.0.2.0/24"]
-  service_endpoints    = ["Microsoft.Sql", "Microsoft.Storage"]
-}
+
 
 resource "azurerm_storage_account" "samplestorageacc" {
   name                = "samplestorageacc"
   resource_group_name = "tamops"
-
-  location                 = "eastus2"
-  account_tier             = "Standard"
+  location = "eastus2"
+  account_tier = "Standard"
   account_replication_type = "LRS"
-
-  network_rules {
-    default_action             = "Deny"
-    ip_rules                   = ["100.0.0.1"]
-    virtual_network_subnet_ids = [azurerm_subnet.storagesubnet.id]
-  }
 
 }
