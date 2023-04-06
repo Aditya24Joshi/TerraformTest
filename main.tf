@@ -20,3 +20,22 @@ resource "azurerm_resource_group" "tamops" {
   name     = "tamops"
   location = "eastus2"
 }
+
+resource "azurerm_virtual_network" "storagevnet" {
+  name                = "storagevnet"
+  address_space       = ["10.0.0.0/16"]
+  location            = "eastus2"
+  resource_group_name = "tamops"
+}
+
+
+resource "azurerm_storage_account" "samplestorageacc" {
+  name                = "samplestorageacc"
+  resource_group_name = "tamops"
+
+  location                 = "eastus2"
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+
+
+}
