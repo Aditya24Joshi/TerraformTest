@@ -15,7 +15,6 @@ resource_group_name = azurerm_resource_group.myrg.name
 resource "azurerm_subnet" "mysubnet" {
 address_prefixes = ["10.0.1.0/24"]
 name = "testsubnet"
-location = azurerm_resource_group.myrg.location 
 resource_group_name = azurerm_resource_group.myrg.name 
 virtual_network_name = azurerm_virtual_network.myvnet.name
 }
@@ -24,7 +23,7 @@ resource "azurerm_public_ip" "mypublicip" {
 name = "testpub"
 location = azurerm_resource_group.myrg.location
 resource_group_name = azurerm_resource_group.myrg.name 
-allocaallocation_method = "Static" 
+allocation_method = "Static" 
 domain_name_label = "test${random_string.myrandom.id}"
 }
 
