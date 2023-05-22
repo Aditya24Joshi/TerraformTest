@@ -49,7 +49,7 @@ resource_group_name = azurerm_resource_group.testRG.name
 size = "Standard_F2"
 admin_username = "aditya"
 admin_password = "$tr0ngGuy2494"
-network_interface_ids = [element(azurerm_network_interface.testNIC[*].id), count.index]
+network_interface_ids = [element(azurerm_network_interface.testNIC[*].id, count.index)]
 
 os_disk {
 name = "os_disk${count.index}" 
