@@ -33,10 +33,10 @@ location = azurerm_resource_group.testRG.location
 resource_gresource_group_name = azurerm_resource_group.testRG.name  
 
 ip_configuration {
-name = ipconfig
+name = "ipconfig"
 subnet_id = azurerm_subnet.testSUBNET.id 
 privateprivate_ip_address_allocation = "Dynamic"
-public_ippublic_ip_address_id = element(azurerm_public_ip[*].id, count.index) 
+public_ippublic_ip_address_id = element(azurerm_public_ip.testIP[*].id, count.index) 
 }
 }
 
@@ -49,7 +49,7 @@ resource_group_name = azurerm_resource_group.testRG.name
 size = "Standard_F2"
 admin_username = "aditya"
 admin_password = "$tr0ngGuy2494"
-network_interface_ids = [element(azurerm_network_interface[*].id), count.index]
+network_interface_ids = [element(azurerm_network_interface.testNIC[*].id), count.index]
 
 os_disk {
 name = "os_disk${count.index}" 
