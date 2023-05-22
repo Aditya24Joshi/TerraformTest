@@ -13,17 +13,17 @@ address_space = [ "10.0.0.0/16" ]
 resource "azurerm_subnet" "testSUBNET"{ 
 name = "mySubNet"
 resource_group_name = azurerm_resource_group.testRG.name
-address_prefixes = [ "10.1.0.0/24" ]
+address_prefixes = [ "10.0.1.0/24" ]
 virtual_network_name = azurerm_virtual_network.testVNET.name
 }
 
-resource "azurerm_public_ip" "testIP"{
+resource "azurerm_public_ip" "testvmIP"{
 count = 2
-name = "myIP-${count.index}"
+name = "testvmip-${count.index}"
 resource_group_name = azurerm_resource_group.testRG.name
 location = azurerm_resource_group.testRG.location
 allocation_method = "Static" 
-domain_name_label = "testip${random_string.myrandom.id}"  
+domain_name_label = "testvmip${random_string.myrandom.id}"  
 }
 
 resource "azurerm_network_interface" "testNIC" {
