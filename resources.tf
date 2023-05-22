@@ -36,7 +36,7 @@ ip_configuration {
 name = "ipconfig"
 subnet_id = azurerm_subnet.testSUBNET.id 
 private_ip_address_allocation = "Dynamic"
-public_ip_address_id = element(azurerm_public_ip.testIP[*].id, count.index) 
+public_ip_address_id = element(azurerm_public_ip.testvmIP[*].id, count.index) 
 }
 }
 
