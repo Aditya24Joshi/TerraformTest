@@ -17,7 +17,7 @@ address_prefixes = [ "10.0.1.0/24" ]
 virtual_network_name = azurerm_virtual_network.testVNET.name
 }
 
-resource "azurerm_public_ip" "testvmIP"{
+resource "azurerm_public_ip" "testIP"{
 count = 2
 name = "testvmip-${count.index}"
 resource_group_name = azurerm_resource_group.testRG.name
