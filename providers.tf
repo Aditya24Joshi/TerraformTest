@@ -20,7 +20,7 @@ features{}
 }
 
 resource "random_string" myrandom {
-length = 6
+length = 8
   upper = false 
   special = false
   numeric = false   
