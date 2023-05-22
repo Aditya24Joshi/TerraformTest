@@ -23,7 +23,7 @@ name = "testvmip-${count.index}"
 resource_group_name = azurerm_resource_group.testRG.name
 location = azurerm_resource_group.testRG.location
 allocation_method = "Static" 
-domain_name_label = "testvmip${random_string.myrandom.id}"  
+domain_name_label = "testvmip-${count.index}-${random_string.myrandom.id}"  
 }
 
 resource "azurerm_network_interface" "testNIC" {
