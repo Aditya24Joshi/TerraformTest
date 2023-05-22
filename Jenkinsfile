@@ -33,10 +33,10 @@ stage ("terraform plan") {
            } 
 }                
 		      
-        stage ("terraform Apply") {
+        stage ("terraform destroy") {
             steps {
                 
-                sh ('terraform apply -auto-approve') 
+                sh ('terraform destroy -auto-approve') 
            }
         }
       
