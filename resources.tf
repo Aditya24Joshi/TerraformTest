@@ -30,13 +30,13 @@ resource "azurerm_network_interface" "testNIC" {
 count = 2
 name = "myNIC-${count.index}"
 location = azurerm_resource_group.testRG.location
-resource_gresource_group_name = azurerm_resource_group.testRG.name  
+resource_group_name = azurerm_resource_group.testRG.name  
 
 ip_configuration {
 name = "ipconfig"
 subnet_id = azurerm_subnet.testSUBNET.id 
-privateprivate_ip_address_allocation = "Dynamic"
-public_ippublic_ip_address_id = element(azurerm_public_ip.testIP[*].id, count.index) 
+private_ip_address_allocation = "Dynamic"
+public_ip_address_id = element(azurerm_public_ip.testIP[*].id, count.index) 
 }
 }
 
