@@ -1,3 +1,4 @@
+#creating 2 vms with same config diff pubIp, location
 resource "azurerm_resource_group" "testRG" {
 name = "myRG"
 location = "East US"
