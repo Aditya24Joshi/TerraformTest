@@ -13,7 +13,7 @@ resource_group_name = azurerm_resource_group.myresourcegroup.name
 resource "azurerm_subnet" "mysubnet" {
 name = "mySUBNET"
 virtual_network_name = azurerm_virtual_network.myvnet.name
-address_prefixes = ["10.0.1.0/16"]
+address_prefixes = ["10.0.1.0/24"]
 resource_group_name = azurerm_resource_group.myresourcegroup.name
 }
 
